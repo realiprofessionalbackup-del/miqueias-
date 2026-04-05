@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #8B7355;
+  --color-accent: #C5A059;
+  --color-accent-hover: #B48F48;
+  --color-premium-black: #1A1A1A;
+  --color-premium-cream: #FAF9F6;
+  --color-whatsapp: #25D366;
+  
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", serif;
+}
+
+@layer base {
+  body {
+    @apply bg-premium-cream text-premium-black font-sans antialiased;
+  }
+  
+  h1, h2, h3 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+.glass-card {
+  @apply bg-white/80 backdrop-blur-sm border border-white/20 shadow-xl rounded-3xl;
+}
+
+.btn-primary {
+  @apply bg-accent hover:bg-accent-hover text-white font-bold py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl active:scale-95 text-center uppercase tracking-wider;
+}
+
+.btn-secondary {
+  @apply bg-premium-black hover:bg-black text-white font-bold py-3 px-6 rounded-full transition-all duration-300 shadow-md hover:shadow-lg active:scale-95 text-center uppercase tracking-wider text-sm;
+}
+
+.input-field {
+  @apply w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all bg-white;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
